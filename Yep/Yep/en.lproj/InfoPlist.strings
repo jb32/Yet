@@ -1,0 +1,6 @@
+"NSLocationWhenInUseUsageDescription" = "Meet with nearby friends";
+"NSPhotoLibraryUsageDescription" = "Send or save photos, set avatar";
+"NSCameraUsageDescription" = "Take photos to send or set avatar";
+"NSMicrophoneUsageDescription" = "Send voice messages";
+"NSContactsUsageDescription" = "Upload contacts to find friends";
+"NSCalendarsUsageDescription" = "Add events in timeline";

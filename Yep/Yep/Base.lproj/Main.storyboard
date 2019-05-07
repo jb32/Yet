@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ha4-ol-D2e">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ConversationsViewController-->
+        <scene sceneID="lwk-zv-bX5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Conversations" referencedIdentifier="ConversationsViewController" id="WzJ-AA-eds" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="p4n-d0-bVI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuw-a0-7hu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3166.5" y="-7"/>
+        </scene>
+        <!--ContactsViewController-->
+        <scene sceneID="HYD-z9-I7W">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contacts" referencedIdentifier="ContactsViewController" id="OiF-57-Yr3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UKc-fp-BZE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxT-g9-T3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2696.5" y="-7"/>
+        </scene>
+        <!--DiscoverContainerViewController-->
+        <scene sceneID="AkL-pk-6jh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="DiscoverContainerViewController" id="Wvc-fE-8jv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MYh-Jg-f06"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AB4-QY-gPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1742.5" y="-7"/>
+        </scene>
+        <!--ProfileViewController-->
+        <scene sceneID="Mat-Us-5jX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileViewController" id="ydG-sI-3J2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yet-XN-WTF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrH-zo-9zo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1275" y="-7"/>
+        </scene>
+        <!--Yep Tab Bar Controller-->
+        <scene sceneID="vud-lc-IAG">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Ha4-ol-D2e" customClass="YepTabBarController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="DdC-xv-l7V">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hOb-vY-dSl" kind="relationship" relationship="viewControllers" id="7mr-Lj-HcA"/>
+                        <segue destination="HI7-HE-lfi" kind="relationship" relationship="viewControllers" id="u9t-ac-tqW"/>
+                        <segue destination="uRR-B1-khD" kind="relationship" relationship="viewControllers" id="hp1-fR-jRe"/>
+                        <segue destination="HFE-uY-fys" kind="relationship" relationship="viewControllers" id="DQ6-Rk-9zC"/>
+                        <segue destination="dwP-GL-7hj" kind="relationship" relationship="viewControllers" id="I8B-nP-KAs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMa-ZP-SEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2219" y="-1284"/>
+        </scene>
+        <!--FeedsViewController-->
+        <scene sceneID="bv3-ym-22T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feeds" referencedIdentifier="FeedsViewController" id="wdr-hu-RTC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uCE-zc-aQ8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGQ-6C-W3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2219" y="-7"/>
+        </scene>
+        <!--Chats-->
+        <scene sceneID="ySr-fW-tdP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hOb-vY-dSl" customClass="YepNavigationController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chats" image="icon_chat" id="v0w-Lf-9uQ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon_chat_active"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rBt-UI-PaQ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WzJ-AA-eds" kind="relationship" relationship="rootViewController" id="3ln-4f-pqW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiW-h5-OHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3802" y="-412"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="CIQ-7C-4Qf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HI7-HE-lfi" customClass="YepNavigationController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contacts" image="icon_contact" id="KN1-ry-ZuC">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon_contact_active"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2p-n3-YGV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OiF-57-Yr3" kind="relationship" relationship="rootViewController" id="DZ6-KJ-m4i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RoZ-xx-fki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3033" y="-412"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="I0q-3N-v5s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HFE-uY-fys" customClass="YepNavigationController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="icon_explore" id="NTl-bD-Fa2">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon_explore_active"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="udE-Dh-c2s">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wvc-fE-8jv" kind="relationship" relationship="rootViewController" id="u4u-1u-xaA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Qb-Z1-5bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1447" y="-412"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="E1Z-RL-QZO">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="dwP-GL-7hj" customClass="YepNavigationController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon_me" id="zZf-BL-xLF">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="icon_me_active"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m4n-ca-AbO">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ydG-sI-3J2" kind="relationship" relationship="rootViewController" id="lU8-8F-8yG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbh-lX-9VY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="-412"/>
+        </scene>
+        <!--Feeds-->
+        <scene sceneID="lMZ-Mf-PVd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uRR-B1-khD" customClass="YepNavigationController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feeds" image="icon_feeds" selectedImage="icon_feeds_active" id="1aS-xr-y1X"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6uo-JX-xvr">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wdr-hu-RTC" kind="relationship" relationship="rootViewController" id="OyJ-H6-Xdn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vh6-Xb-Pbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2219" y="-411"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_chat" width="30" height="30"/>
+        <image name="icon_chat_active" width="30" height="30"/>
+        <image name="icon_contact" width="30" height="30"/>
+        <image name="icon_contact_active" width="30" height="30"/>
+        <image name="icon_explore" width="30" height="30"/>
+        <image name="icon_explore_active" width="30" height="30"/>
+        <image name="icon_feeds" width="30" height="30"/>
+        <image name="icon_feeds_active" width="30" height="30"/>
+        <image name="icon_me" width="30" height="30"/>
+        <image name="icon_me_active" width="30" height="30"/>
+    </resources>
+</document>

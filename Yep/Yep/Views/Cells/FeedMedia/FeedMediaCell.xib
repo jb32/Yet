@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedMediaCell" id="gTV-IL-0wX" customClass="FeedMediaCell" customModule="Yep" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aee-O7-EqM">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_media_delete" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-wW-DEo">
+                        <rect key="frame" x="56" y="8" width="16" height="16"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hUo-wW-DEo" secondAttribute="trailing" constant="8" id="cve-33-J4n"/>
+                <constraint firstAttribute="trailing" secondItem="Aee-O7-EqM" secondAttribute="trailing" id="d2z-Xc-HRU"/>
+                <constraint firstItem="Aee-O7-EqM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dhp-RU-Pr8"/>
+                <constraint firstAttribute="bottom" secondItem="Aee-O7-EqM" secondAttribute="bottom" id="eRp-F5-4wX"/>
+                <constraint firstItem="Aee-O7-EqM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="o9g-qX-Yef"/>
+                <constraint firstItem="hUo-wW-DEo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="pIZ-QQ-Aek"/>
+            </constraints>
+            <size key="customSize" width="120" height="116"/>
+            <connections>
+                <outlet property="deleteImageView" destination="hUo-wW-DEo" id="DrB-Br-qyb"/>
+                <outlet property="imageView" destination="Aee-O7-EqM" id="X5m-t5-bCA"/>
+            </connections>
+            <point key="canvasLocation" x="264" y="350"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_media_delete" width="16" height="16"/>
+    </resources>
+</document>

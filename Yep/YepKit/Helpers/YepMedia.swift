@@ -1,0 +1,128 @@
+//
+//  YepMedia.swift
+//  Yep
+//
+//  Created by nixzhu on 15/10/23.
+//  Copyright © 2015年 Catch Inc. All rights reserved.
+//
+
+import UIKit
+import Navi
+
+public func metaDataStringOfImage(_ image: UIImage, needBlurThumbnail: Bool) -> String? {
+
+    let metaDataInfo: [String: Any]
+
+    let imageWidth = image.size.width
+    let imageHeight = image.size.height
+
+    let thumbnailWidth: CGFloat
+    let thumbnailHeight: CGFloat
+
+    if imageWidth > imageHeight {
+        thumbnailWidth = min(imageWidth, Config.MetaData.thumbnailMaxSize)
+        thumbnailHeight = imageHeight * (thumbnailWidth / imageWidth)
+    } else {
+        thumbnailHeight = min(imageHeight, Config.MetaData.thumbnailMaxSize)
+        thumbnailWidth = imageWidth * (thumbnailHeight / imageHeight)
+    }
+
+    let thumbnailSize = CGSize(width: thumbnailWidth, height: thumbnailHeight)
+
+    if let thumbnail = image.navi_resizeToSize(thumbnailSize, withInterpolationQuality: CGInterpolationQuality.high) {
+
+        if needBlurThumbnail {
+
+            /*
+            let blurredThumbnail = thumbnail.blurredImageWithRadius(5, iterations: 7, tintColor: UIColor.clearColor())
+
+            let data = UIImageJPEGRepresentation(blurredThumbnail, 0.7)
+
+            let string = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+
+            println("image blurredThumbnail string length: \(string.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))\n")
+
+            metaDataInfo = [
+                YepConfig.MetaData.imageWidth: imageWidth,
+                YepConfig.MetaData.imageHeight: imageHeight,
+                YepConfig.MetaData.blurredThumbnailString: string,
+            ]
+            */
+            metaDataInfo = [
+                Config.MetaData.imageWidth: imageWidth,
+                Config.MetaData.imageHeight: imageHeight,
+            ]
+
+        } else {
+
+            let data = thumbnail.jpegData(compressionQuality: 0.7)!//UIImageJPEGRepresentation(thumbnail, 0.7)!
+            let string = data.base64EncodedString(options: [])
+
+            println("image thumbnail string length: \(string.lengthOfBytes(using: .utf8))\n")
+
+            metaDataInfo = [
+                Config.MetaData.imageWidth: imageWidth,
+                Config.MetaData.imageHeight: imageHeight,
+                Config.MetaData.thumbnailString: string,
+            ]
+        }
+
+    } else {
+        metaDataInfo = [
+            Config.MetaData.imageWidth: imageWidth,
+            Config.MetaData.imageHeight: imageHeight
+        ]
+    }
+
+    var metaDataString: String? = nil
+    if let metaData = try? JSONSerialization.data(withJSONObject: metaDataInfo, options: []) {
+        metaDataString = String(data: metaData, encoding: .utf8) 
+    }
+
+    return metaDataString
+}
+
+// 我们来一个 [0, 无穷] 到 [0, 1] 的映射
+// 函数 y = 1 - 1 / e^(x/100) 挺合适
+func nonlinearLimit(_ x: Int, toMax max: Int) -> Int {
+    let n = 1 - 1 / exp(Double(x) / 100)
+    return Int(Double(max) * n)
+}
+/*
+// mini test
+for var i = 0; i < 1000; i+=10 {
+    let finalNumber = f(i, max:  maxNumber)
+    println("i: \(i), finalNumber: \(finalNumber)")
+}
+*/
+
+public func limitedAudioSamplesCount(_ x: Int) -> Int {
+    return nonlinearLimit(x, toMax: 50)
+}
+
+public func averageSamplingFrom(_ values:[CGFloat], withCount count: Int) -> [CGFloat] {
+
+    let step = Double(values.count) / Double(count)
+
+    var outoutValues = [CGFloat]()
+
+    var x: Double = 0
+
+    for _ in 0..<count {
+
+        let index = Int(x)
+
+        if let value = values[safe: index] {
+            let fixedValue = CGFloat(Int(value * 100)) / 100 // 最多两位小数
+            outoutValues.append(fixedValue)
+
+        } else {
+            break
+        }
+
+        x += step
+    }
+
+    return outoutValues
+}
+

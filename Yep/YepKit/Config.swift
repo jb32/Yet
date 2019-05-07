@@ -1,0 +1,80 @@
+//
+//  Config.swift
+//  Yep
+//
+//  Created by NIX on 16/5/24.
+//  Copyright © 2016年 Catch Inc. All rights reserved.
+//
+
+import Foundation
+
+final public class Config {
+
+    public static var updatedAccessTokenAction: (() -> Void)?
+    public static var updatedPusherIDAction: ((_ pusherID: String) -> Void)?
+
+    public static var sentMessageSoundEffectAction: (() -> Void)?
+
+    public static var timeAgoAction: ((_ date: Date) -> String)?
+
+    public static var isAppActive: (() -> Bool)?
+
+    public static let appGroupID: String = "group.com.sinbane.seattle"
+
+    public static var clientType: Int {
+        #if DEBUG
+            return 2
+        #else
+            return 0
+        #endif
+    }
+
+    public static var avatarCompressionQuality: CGFloat = 0.7
+
+    public struct NotificationName {
+        public static let markAsReaded = Notification.Name(rawValue: "YepConfig.Notification.markAsReaded")
+        public static let changedConversation = Notification.Name(rawValue: "YepConfig.Notification.changedConversation")
+        public static let changedFeedConversation = Notification.Name(rawValue: "YepConfig.Notification.changedFeedConversation")
+        public static let newMessages = Notification.Name(rawValue: "YepConfig.Notification.newMessages")
+        public static let deletedMessages = Notification.Name(rawValue: "YepConfig.Notification.deletedMessages")
+        public static let updatedUser = Notification.Name(rawValue: "YepConfig.Notification.updatedUser")
+
+        public static let messageStateChanged = Notification.Name(rawValue: "YepConfig.Notification.messageStateChangedNotification")
+        public static let messageBatchMarkAsRead = Notification.Name(rawValue: "YepConfig.Notification.messageBatchMarkAsReadNotification")
+    }
+    
+    public struct Message {
+        // 注意：确保 localNewerTimeInterval > sectionOlderTimeInterval
+        public static let localNewerTimeInterval: TimeInterval = 0.001
+        public static let sectionOlderTimeInterval: TimeInterval = 0.0005
+    }
+
+    public struct MetaData {
+        public static let audioDuration = "audioDuration"
+        public static let audioSamples = "audioSamples"
+
+        public static let imageWidth = "imageWidth"
+        public static let imageHeight = "imageHeight"
+
+        public static let videoWidth = "videoWidth"
+        public static let videoHeight = "videoHeight"
+
+        public static let thumbnailString = "thumbnail"
+        public static let blurredThumbnailString = "blurredThumbnail"
+
+        public static let thumbnailMaxSize: CGFloat = 60
+    }
+
+    public struct Media {
+        public static let imageWidth: CGFloat = 1024
+        public static let imageHeight: CGFloat = 1024
+
+        public static let miniImageWidth: CGFloat = 200
+        public static let miniImageHeight: CGFloat = 200
+    }
+
+    struct SocialWork {
+        static let syncCountMax: Int = 5
+    }
+}
+
